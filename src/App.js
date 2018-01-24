@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
-import { Button, Menu, Segment } from "semantic-ui-react";
+//import { withRouter, Link } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
 import logo from "./logo.svg";
-//import "./App.css";
+
+import MainFocus from './MainFocus'
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class App extends Component {
   render() {
     const { activeItem } = this.state
     return (
-    <div>
+    <div className="App">
         <Menu pointing secondary>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
@@ -26,11 +28,10 @@ class App extends Component {
             <Menu.Item name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} />
           </Menu.Menu>
         </Menu>
+        <MainFocus />
 
-        <Segment>
-          <img src='/assets/images/wireframe/media-paragraph.png' />
-        </Segment>
       </div>
+
     );
   }
 }
