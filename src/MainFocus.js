@@ -57,11 +57,15 @@ class MainFocus extends Component {
               <Button.Content hidden>Carpe Diem!</Button.Content>
             </Button>
           </div>
-          <Segment.Group className="MainFocus-Display">
-            {this.state.isVisible && (
-              <Responsive as={Segment}>{this.state.mainFocusResult}</Responsive>
-            )}
-          </Segment.Group>
+          <div className="MainFocus-Display">
+            <Segment.Group>
+              {this.state.isVisible && (
+                <Responsive  as={Segment}>
+                  {this.state.mainFocusResult}
+                </Responsive>
+              )}
+            </Segment.Group>
+          </div>
         </Form>
       </div>
     );

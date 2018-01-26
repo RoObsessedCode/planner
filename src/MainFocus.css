@@ -12,18 +12,19 @@
   justify-content: center;
   flex-direction: column;
   vertical-align: middle;
+  max-width:100%;
 
 }
 
 .MainFocus-div  {
-  max-width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
 
 }
 
 .MainFocus-TextArea {
-  width: 80%;
+  /* width: 80%; */
 
 }
 
@@ -32,5 +33,6 @@
 }
 
 .MainFocus-Display {
-  max-width: 100%;
+  max-width: 502px;
+  box-sizing: border-box;
 }
