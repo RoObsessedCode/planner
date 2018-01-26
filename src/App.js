@@ -44,10 +44,16 @@ class App extends Component {
             />
           </Menu.Menu>
         </Menu>
-        <div className="App-OwlDiv" >
-          <Image className="App-OwlImg" src={require("./owl.ico")} size="small" />
+        <div className="App-OwlDivMainFocus">
+          <div className="App-OwlDiv">
+            <Image
+              className="App-OwlImg"
+              src={require("./owl.ico")}
+              size="small"
+            />
+          </div>
+          <MainFocus />
         </div>
-        <MainFocus />
       </div>
     );
   }

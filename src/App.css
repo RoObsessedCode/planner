@@ -5,14 +5,27 @@
 
 }
 
+.App-OwlDivMainFocus {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
 .App-OwlDiv {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
+
+}
+
+.App-MainFocus {
+  flex-grow: 1;
 
 }
 
 .App-OwlImg {
-  align-self: flex-end;
+  align-self: center;
 }
 
 .App-logo {
