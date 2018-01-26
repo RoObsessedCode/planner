@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { Input, Header, Button, Icon, Form, TextArea } from "semantic-ui-react";
+import { Segment, Responsive, Header, Button, Icon, Form, TextArea } from "semantic-ui-react";
 import "./MainFocus.css";
 
 class MainFocus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainFocus: ""
+      mainFocusInput: '',
+      mainFocusResult: '',
+      isVisible: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,13 +16,17 @@ class MainFocus extends Component {
 
   handleChange(event) {
     //set state based on what user types in
-    this.setState({ mainFocus: event.target.value });
+    this.setState({ mainFocusInput: event.target.value });
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ mainFocus: "" });
-  }
 
+    this.setState({ mainFocusResult: this.state.mainFocusInput})
+    this.setState({ isVisible: true})
+    this.setState({mainFocusInput: ''})
+
+  }
+// kyle is awesome
   render() {
     return (
       <div className="MainFocus-HeadDiv" >
@@ -33,7 +39,7 @@ class MainFocus extends Component {
               className="MainFocus-TextArea"
               rows={1}
               placeholder="Today's Main Focus..."
-              value={this.state.mainFocus}
+              value={this.state.mainFocusInput}
               onChange={e => this.handleChange(e)}
             />
 
@@ -43,6 +49,11 @@ class MainFocus extends Component {
               </Button.Content>
               <Button.Content hidden>Carpe Diem!</Button.Content>
             </Button>
+            <Segment.Group>
+              { this.state.isVisible &&
+              <Responsive as={Segment}>{this.state.mainFocusResult}</Responsive>
+              }
+            </Segment.Group>
           </div>
         </Form>
       </div>
