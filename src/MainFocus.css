@@ -13,11 +13,10 @@
   flex-direction: column;
   vertical-align: middle;
 
-
 }
 
 .MainFocus-div  {
-
+  max-width: 100%;
   display: flex;
   flex-direction: row;
 
@@ -29,6 +28,9 @@
 }
 
 .MainFocus-SubmitButton {
-
   padding-left: 4em;
+}
+
+.MainFocus-Display {
+  max-width: 100%;
 }

@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import { Segment, Responsive, Header, Button, Icon, Form, TextArea } from "semantic-ui-react";
+import {
+  Segment,
+  Responsive,
+  Header,
+  Button,
+  Icon,
+  Form,
+  TextArea
+} from "semantic-ui-react";
 import "./MainFocus.css";
 
 class MainFocus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainFocusInput: '',
-      mainFocusResult: '',
+      mainFocusInput: "",
+      mainFocusResult: "",
       isVisible: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -21,15 +29,14 @@ class MainFocus extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({ mainFocusResult: this.state.mainFocusInput})
-    this.setState({ isVisible: true})
-    this.setState({mainFocusInput: ''})
-
+    this.setState({ mainFocusResult: this.state.mainFocusInput });
+    this.setState({ isVisible: true });
+    this.setState({ mainFocusInput: "" });
   }
-// kyle is awesome
+  // kyle is awesome
   render() {
     return (
-      <div className="MainFocus-HeadDiv" >
+      <div className="MainFocus-HeadDiv">
         <Form className="MainFocus-Form" onSubmit={e => this.handleSubmit(e)}>
           <Header size="large">
             Which of your obsessions will you tackle today?
@@ -49,12 +56,12 @@ class MainFocus extends Component {
               </Button.Content>
               <Button.Content hidden>Carpe Diem!</Button.Content>
             </Button>
-            <Segment.Group>
-              { this.state.isVisible &&
-              <Responsive as={Segment}>{this.state.mainFocusResult}</Responsive>
-              }
-            </Segment.Group>
           </div>
+          <Segment.Group className="MainFocus-Display">
+            {this.state.isVisible && (
+              <Responsive as={Segment}>{this.state.mainFocusResult}</Responsive>
+            )}
+          </Segment.Group>
         </Form>
       </div>
     );
